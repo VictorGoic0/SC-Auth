@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "./Form.css";
 
 class Login extends Component {
   state = {
@@ -18,11 +19,13 @@ class Login extends Component {
       }
     }));
   };
-  submitInfo = info => {
+  submitInfo = (e, info) => {
+    e.preventDefault();
     axios
       .post("http://localhost:5000/auth/login", info)
       .then(res => {
         localStorage.setItem("token", res.data.token);
+        this.props.history.push("/jokes");
       })
       .catch(err => {
         console.log(err);
@@ -31,7 +34,7 @@ class Login extends Component {
   render() {
     return (
       <div className="signupform">
-        <form onSubmit={this.submitInfo(this.state.user)}>
+        <form onSubmit={e => this.submitInfo(e, this.state.user)}>
           <input
             onChange={this.handleInputChange}
             placeholder="username"
