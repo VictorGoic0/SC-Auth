@@ -29,9 +29,10 @@ Implement an User Authentication System in order to access the jokes from the Jo
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 1. What is the purpose of using _sessions_?
-1. What does bcrypt do to help us store passwords in a secure manner.
-1. What does bcrypt do to slow down attackers?
-1. What are the three parts of the JSON Web Token?
+   Sessions will "remember" that a user is logged in so that they don't have to continuously enter their credentials.
+1. What does bcrypt do to help us store passwords in a secure manner. Bcrypt hashes passwords.
+1. What does bcrypt do to slow down attackers? Hashing passwords slows down attacks by making it more difficult to guess a password by chance. Significantly more difficult.
+1. What are the three parts of the JSON Web Token? The payload, the secret and the options. The options tell us how long the token will last before it expires, or any other parameters a token might have. The secret is a signature that every token will be checked for to see if it's valid. The payload contains whatever we put in it, usually some information about the user such as user ID.
 
 ## Project Set Up
 
@@ -48,9 +49,9 @@ Follow these steps for completing your project:
 
 - [ ] `cd` into the root of the project and run `yarn` to install dependencies.
 - [ ] Once you have your `node_modules` go ahead and run `yarn server` or `npm run server` to start your node server.
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's  Repo).
+- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into master (student's Repo).
 - [ ] Add your Project Manager as a Reviewer on the Pull-request
-- [ ] PM then will count the HW as done by  merging the branch back into master.
+- [ ] PM then will count the HW as done by merging the branch back into master.
 
 Helpful Tip on Testing this Project:
 
