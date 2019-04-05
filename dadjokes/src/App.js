@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import { Route } from "react-router-dom";
+import PrivateRoute from "./PrivateRoute";
 import Login from "./Login";
 import Signup from "./Signup";
 import NavBar from "./NavBar";
@@ -13,7 +14,7 @@ class App extends Component {
         <NavBar />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
-        <Route path="/jokes" component={Jokes} />
+        <PrivateRoute path="/jokes" component={Jokes} />
       </div>
     );
   }

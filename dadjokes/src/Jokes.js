@@ -20,7 +20,7 @@ class Jokes extends Component {
     return (
       <div>
         {this.state.jokes.map(joke => (
-          <li>{joke.joke}</li>
+          <li key={joke.id}>{joke.joke}</li>
         ))}
       </div>
     );
