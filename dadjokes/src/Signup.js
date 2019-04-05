@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 class Signup extends Component {
   state = {
@@ -16,10 +17,21 @@ class Signup extends Component {
       }
     }));
   };
+
+  submitInfo = info => {
+    axios
+      .post("http://localhost:5000/auth/register", info)
+      .then(res => {
+        localStorage.setItem("token", res.data.token);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
   render() {
     return (
       <div className="signupform">
-        <form>
+        <form onSubmit={this.submitInfo(this.state.user)}>
           <input
             onChange={this.handleInputChange}
             placeholder="username"
