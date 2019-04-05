@@ -13,7 +13,8 @@ router.post("/register", async (req, res) => {
     try {
       const newUser = await db.create({ username, password });
       if (newUser) {
-        res.status(201).json(newUser);
+        const token = generateToken(newUser.id, username);
+        res.status(201).json({ message: `Welcome ${username}!`, token });
       }
     } catch (error) {
       res
