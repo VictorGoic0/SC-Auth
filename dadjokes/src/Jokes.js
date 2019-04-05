@@ -9,7 +9,6 @@ class Jokes extends Component {
     axios
       .get("http://localhost:5000/api/jokes")
       .then(res => {
-        console.log(res);
         this.setState({ jokes: res.data });
       })
       .catch(err => {
