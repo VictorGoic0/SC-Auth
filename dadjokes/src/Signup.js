@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import "./Form.css";
 
 class Signup extends Component {
@@ -51,6 +52,9 @@ class Signup extends Component {
             type="password"
             required
           />
+          <p>
+            Already Have An Account? <Link to="/login">Log In</Link>
+          </p>
 
           <button type="submit">Sign Up</button>
         </form>
